@@ -1,0 +1,53 @@
+{
+  "name": "freesol",
+  "version": "0.0.1",
+  "description": "Static site generator for the freesolo markdown editor",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kilgarenone/freesol.git"
+  },
+  "keywords": [
+    "static site generator"
+  ],
+  "author": {
+    "name": "Kheoh Yee Wei",
+    "email": "kwei88@gmail.com",
+    "url": "https://kheohyeewei.com/"
+  },
+  "license": "MIT",
+  "bin": {
+    "nanogen": "./lib/cli.js"
+  },
+  "type": "module",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "mocha --recursive",
+    "test:coverage": "nyc --reporter=html --reporter=text npm run test",
+    "test:ci": "nyc --reporter=lcov npm run test",
+    "prettier": "prettier \"./{lib,test}/**/*.js\"",
+    "prettier:check": "npm run prettier -- -l",
+    "lint": "eslint \"./{lib,test}/**/*.js\"",
+    "ci": "npm run lint && npm run prettier:check && npm run test:ci",
+    "site:start": "nanogen start",
+    "site:build": "cross-env NODE_ENV=production nanogen build"
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "dependencies": {
+    "chalk": "^5.0.0",
+    "chalk-template": "^0.3.1",
+    "meow": "^10.1.2",
+    "ora": "^6.0.1",
+    "servor": "^4.0.2"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "cross-env": "^7.0.3",
+    "mocha": "^9.2.1",
+    "prettier": "^2.5.1",
+    "sinon": "^13.0.1"
+  }
+}
