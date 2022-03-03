@@ -40,6 +40,7 @@
     "@egoist/front-matter": "^1.0.0",
     "chalk": "^5.0.0",
     "chalk-template": "^0.3.1",
+    "markdown-it": "^12.3.2",
     "meow": "^10.1.2",
     "ora": "^6.0.1",
     "servor": "^4.0.2"
